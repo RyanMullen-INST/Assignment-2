@@ -145,3 +145,31 @@ h1 {
   font-size: 1.2em;
   border: 1px solid gray;
 }
+
+#filteredcases {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.rest_list {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  list-style: none;
+}
+
+.name, .address {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: column;
+  list-style: none;
+}
+
+.rest_list li {
+  margin: 2%;
+  background: rgb(208,208,208);
+  background: linear-gradient(90deg, rgba(208,208,208,1) 0%, rgba(44,132,163,1) 45%, rgba(0,212,255,1) 100%);
+}

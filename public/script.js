@@ -5,7 +5,7 @@
 // For consistency's sake, please add it ABOVE the Event Listener
 const establishments = [];
 const searchinput = document.querySelector('.text_input');
-const suggestions = document.querySelector('.filteredcases');
+const suggestions = document.querySelector('.rest_list');
 
 
 function findmatches(wordtomatch, establishments) {
@@ -27,7 +27,7 @@ function displaymatches(establishments) {
     return `
     <li>
     <span class="name">${place.name}</span>
-    <span class="address">${place.address_line_1}</span>
+    <address>${place.address_line_1}</address>
     </li>
     `;
   }).join('');
@@ -39,7 +39,7 @@ function runThisWithResultsFromServer(jsonfromserver) {
 
   displaymatches(establishments);
 }
-
+// do not change this
 searchinput.addEventListener('keyup', async (e) => {
     e.preventDefault(); // this stops whatever the browser wanted to do itself.
     const form = $(e.target).serializeArray();
