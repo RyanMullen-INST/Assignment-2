@@ -27,7 +27,7 @@ function displaymatches(establishments) {
     return `
     <li>
     <span class="name">${place.name}</span>
-    <span class = "address">${place.address_line_1}</span>
+    <span class="address">${place.address_line_1}</span>
     </li>
     `;
   }).join('');

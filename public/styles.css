@@ -163,14 +163,14 @@ h1 {
 /* forces name to be left side */
 .name {
   display: flex;
-  justify-content: left;
-  align-content: left;
+  justify-content: center;
+  align-content: center;
 }
 
 .address {
   display: flex;
-  justify-content: right;
-  align-content: right;
+  justify-content: center;
+  align-content: center;
   font-style: italic;
 }
 
@@ -180,6 +180,7 @@ h1 {
   justify-self: start;
   align-content: center;
   width: 500px;
+  height: auto;
   margin: 2%;
   background: rgb(208,208,208);
   background: linear-gradient(90deg, rgba(208,208,208,1) 0%,
