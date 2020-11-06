@@ -6,7 +6,7 @@ h1{
   }
 
 body {
-  background: #4d4d4d;
+  background: #FF6666;
 }
 
 .wrapper {
@@ -146,7 +146,48 @@ h1 {
   border: 1px solid gray;
 }
 
-#filteredcases {
+/* centers the stuff */
+.filteredcases {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+/* forces column */
+.rest_list {
+  flex-direction: column;
+  list-style: none;
+  width: auto;
+}
+
+/* forces name to be left side */
+.name {
+  display: flex;
+  justify-content: left;
+  align-content: left;
+}
+
+.address {
+  display: flex;
+  justify-content: right;
+  align-content: right;
+  font-style: italic;
+}
+
+/* forces uniformity across every list object */
+.rest_list li {
+  display: flex;
+  justify-self: start;
+  align-content: center;
+  width: 500px;
+  margin: 2%;
+  background: rgb(208,208,208);
+  background: linear-gradient(90deg, rgba(208,208,208,1) 0%,
+   rgba(44,132,163,1) 45%, rgba(0,212,255,1) 100%);
+}
+
+/*
+.filteredcases {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -158,6 +199,7 @@ h1 {
   align-self: center;
   flex-direction: column;
   list-style: none;
+  width: auto;
 }
 
 .name, .address {
@@ -169,7 +211,13 @@ h1 {
 }
 
 .rest_list li {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 400px;
   margin: 2%;
   background: rgb(208,208,208);
-  background: linear-gradient(90deg, rgba(208,208,208,1) 0%, rgba(44,132,163,1) 45%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(208,208,208,1) 0%,
+   rgba(44,132,163,1) 45%, rgba(0,212,255,1) 100%);
 }
+*/

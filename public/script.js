@@ -27,7 +27,7 @@ function displaymatches(establishments) {
     return `
     <li>
     <span class="name">${place.name}</span>
-    <address>${place.address_line_1}</address>
+    <span class = "address">${place.address_line_1}</span>
     </li>
     `;
   }).join('');
@@ -40,7 +40,7 @@ function runThisWithResultsFromServer(jsonfromserver) {
   displaymatches(establishments);
 }
 // do not change this
-searchinput.addEventListener('keyup', async (e) => {
+searchinput.addEventListener('change', async (e) => {
     e.preventDefault(); // this stops whatever the browser wanted to do itself.
     const form = $(e.target).serializeArray();
     fetch('/api', {
