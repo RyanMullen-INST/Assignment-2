@@ -7,6 +7,7 @@ const establishments = [];
 const searchinput = document.querySelector('.text_input');
 const suggestions = document.querySelector('.filteredcases');
 
+
 function findmatches(wordtomatch, establishments) {
 
   // filter establishments
