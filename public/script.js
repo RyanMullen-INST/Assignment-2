@@ -3,7 +3,7 @@
 // I pulled this straight from Lab 7
 // We will likely need to add extra stuff because this is only the event listener object
 // For consistency's sake, please add it ABOVE the Event Listener
-
+const establishments = [];
 const searchinput = document.querySelector('.text_input');
 const suggestions = document.querySelector('.filteredcases');
 
@@ -34,7 +34,6 @@ function displaymatches(establishments) {
 }
 
 function runThisWithResultsFromServer(jsonfromserver) {
-  const establishments = [];
   establishments.push(...jsonfromserver);
 
   displaymatches(establishments);
