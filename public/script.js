@@ -2,6 +2,7 @@
 // WEEEEEEEE
 // I pulled this straight from Lab 7
 // We will likely need to add extra stuff because this is only the event listener object
+
 // For consistency's sake, please add it ABOVE the Event Listener
 const establishments = [];
 const searchinput = document.querySelector('.text_input');
@@ -9,6 +10,7 @@ const suggestions = document.querySelector('.rest_list');
 
 // This is matching EVERYTHING POSSIBLE because it matches
 // to the tilde ` thing, which should have 0 matches
+// Try to match with place.name instead of category?
 function findmatches(wordtomatch, establishments) {
 
   // filter establishments
@@ -18,7 +20,7 @@ function findmatches(wordtomatch, establishments) {
     const regex = new RegExp(wordtomatch, 'gi');
 
     // match establishment category using regular expression
-    return place.category.match(regex);
+    return place.name.match(regex);
   });
 }
 
@@ -31,7 +33,7 @@ function displaymatches(establishments) {
     <span class="address">${place.address_line_1}</span>
     <span class="address">${place.city}, ${place.state}  ${place.zip}</span>
     </li>
-    `; // add in the rest of the address following the JSON format
+    `;
   }).join('');
   suggestions.innerHTML = html;
 }
