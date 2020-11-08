@@ -28,8 +28,8 @@ function displaymatches(establishments) {
     return `
     <li>
     <span class="name">${place.name}</span>
-    <span class="address"><br>${place.address_line_1}</br></span>
-    
+    <span class="address">${place.address_line_1}</span>
+    <span class="address">${place.city}, ${place.state}  ${place.zip}</span>
     </li>
     `; // add in the rest of the address following the JSON format
   }).join('');
