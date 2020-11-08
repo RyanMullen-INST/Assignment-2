@@ -7,7 +7,8 @@ const establishments = [];
 const searchinput = document.querySelector('.text_input');
 const suggestions = document.querySelector('.rest_list');
 
-
+// This is matching EVERYTHING POSSIBLE because it matches
+// to the tilde ` thing, which should have 0 matches
 function findmatches(wordtomatch, establishments) {
 
   // filter establishments
