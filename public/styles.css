@@ -98,23 +98,22 @@ h1 {
 
 /* forces name to be left side */
 .name {
+  text-align: center;
   display: flex;
   justify-content: center;
   align-content: center;
+  
 }
 
 .address {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-self: center;
   font-style: italic;
 }
 
 /* forces uniformity across every list object */
-.rest_list li {
-  display: flex;
-  justify-self: start;
-  align-content: center;
+.rest_list > li {
   width: 500px;
   height: auto;
   margin: 2%;
