@@ -8,30 +8,34 @@ const establishments = [];
 const searchinput = document.querySelector('.text_input');
 const suggestions = document.querySelector('.rest_list');
 
-// This is matching EVERYTHING POSSIBLE because it matches
-// to the tilde ` thing, which should have 0 matches
-// Try to match with place.name instead of category?
+
+// this function works.
 function findmatches(wordtomatch, establishments) {
+  console.log(establishments.length);
   // filter establishments
-  return establishments.filter(place => {
+  const matches = establishments.filter(restaurant => {
     // create global and insensitive regular expression
     const regex = new RegExp(wordtomatch, 'gi');
     // match establishment category using regular expression
-    return place.name.match(regex) || place.category.match(regex);
+    return restaurant.name.match(regex) || restaurant.category.match(regex);
   });
+  console.log(matches);
+  return matches;
 }
 
+// html becomes a gargantuan thingy
 function displaymatches() {
-  const matcharray = findmatches(this.value, establishments);
-  const html = matcharray.map(place => {
+  console.log(findmatches(this.value, establishments));
+  const html = findmatches(this.value, establishments).map(restaurant => {
     return `
     <li>
-    <span class="name">${place.name}</span>
-    <span class="address">${place.address_line_1}</span>
-    <span class="address">${place.city}, ${place.state}  ${place.zip}</span>
+    <span class="name">${restaurant.name}</span>
+    <span class="address">${restaurant.address_line_1}</span>
+    <span class="address">${restaurant.city}, ${restaurant.state}  ${restaurant.zip}</span>
     </li>
     `;
   }).join('');
+  console.log(html);
   suggestions.innerHTML = html;
 }
 
