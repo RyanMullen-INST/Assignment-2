@@ -23,7 +23,7 @@ function findmatches(wordtomatch, establishments) {
   return matches;
 }
 
-// html becomes a gargantuan thingy
+// matches, html becomes a gargantuan thingy
 function displaymatches() {
   console.log(findmatches(this.value, establishments));
   const html = findmatches(this.value, establishments).map(restaurant => {
