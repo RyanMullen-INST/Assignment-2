@@ -12,19 +12,16 @@ const suggestions = document.querySelector('.rest_list');
 // to the tilde ` thing, which should have 0 matches
 // Try to match with place.name instead of category?
 function findmatches(wordtomatch, establishments) {
-
   // filter establishments
   return establishments.filter(place => {
-
     // create global and insensitive regular expression
     const regex = new RegExp(wordtomatch, 'gi');
-
     // match establishment category using regular expression
-    return place.name.match(regex);
+    return place.name.match(regex) || place.category.match(regex);
   });
 }
 
-function displaymatches(establishments) {
+function displaymatches() {
   const matcharray = findmatches(this.value, establishments);
   const html = matcharray.map(place => {
     return `
@@ -40,23 +37,23 @@ function displaymatches(establishments) {
 
 function runThisWithResultsFromServer(jsonfromserver) {
   establishments.push(...jsonfromserver);
-
   displaymatches(establishments);
 }
+
 // do not change this
-searchinput.addEventListener('change', async (e) => {
-    e.preventDefault(); // this stops whatever the browser wanted to do itself.
-    const form = $(e.target).serializeArray();
-    fetch('/api', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(form)
-    })
-      .then((fromServer) => fromServer.json())
-      .then((jsonFromServer) => runThisWithResultsFromServer(jsonFromServer))
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+searchinput.addEventListener('change',  (e) => {
+  e.preventDefault(); // this stops whatever the browser wanted to do itself.
+  const form = $(e.target).serializeArray();
+  fetch('/api', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(form)
+  })
+    .then((fromServer) => fromServer.json())
+    .then((jsonFromServer) => runThisWithResultsFromServer(jsonFromServer))
+    .catch((err) => {
+      console.log(err);
+    });
+});

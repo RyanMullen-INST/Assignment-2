@@ -116,8 +116,10 @@ h1 {
   width: 500px;
   height: auto;
   margin: 2%;
+
   background: rgb(193,207,193);
   background: linear-gradient(90deg, rgba(193,207,193,1) 0%, rgba(40,122,139,1) 100%);
 
   padding: 1%;
+
 }
